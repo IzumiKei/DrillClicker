@@ -53,12 +53,6 @@ func _release_other_inputs(pressed_input):
 			Input.action_release(i)
 
 
-
-
-
-
-
-
 func _on_PlayerDrill_body_entered(body):
 	if body.is_in_group("MinableBlock"):
 		body.is_minable = true
