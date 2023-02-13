@@ -3,9 +3,11 @@ extends StaticBody2D
 # Nodo para los bloques de minerales
 #
 
+const MAX_ORE_SPAWN_LIMIT = 10
 export(Resource) var Ore
 var _floor_item_node = preload("res://Scenes/floor_item.tscn")
 var being_drilled: bool = false;
+var _spawned_ores = 0
 onready var _sprite = $Sprite
 onready var _timer = $Timer
 onready var _mine_timer = $MineTimer
@@ -35,8 +37,10 @@ func mine_block():
 	_mine_timer.start(5)
 
 
-func add_mineral_to_inventory():
-	# Agrega el mineral al inventario
+func spawn_ore():
+	# Spawns un ore
+	if _spawned_ores >= MAX_ORE_SPAWN_LIMIT:
+		return
 	randomize()
 	var _floor_item_instance = _floor_item_node.instance()
 	_floor_item_instance.Ore = Ore
@@ -59,14 +63,16 @@ func add_mineral_to_inventory():
 		_floor_item_instance.position.y = position.y + randi() % 8
 	
 	get_tree().current_scene.get_node("Main").add_child(_floor_item_instance)
+	_spawned_ores += 1
 
 
 func _on_PlayerCheck_body_entered(_body):
 	Inventory.current_ore_block = self # Para instalar el taladro (main.gd)
+	_spawned_ores = 0
 
 
 func _on_Timer_timeout():
-	add_mineral_to_inventory()
+	spawn_ore()
 
 
 func _on_MineTimer_timeout():

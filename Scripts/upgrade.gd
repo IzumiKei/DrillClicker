@@ -25,7 +25,7 @@ func print_cost():
 func _on_Button_button_down():
 	if stat.current_level == stat.max_level:
 		print("You have maxed out")
-		_button.disabled == true
+		_button.disabled = true
 	if Inventory.gold_amount >= stat.upgrade_cost[stat.current_level]:
 		print(stat.name + " upgraded")
 		Inventory.gold_amount -= stat.upgrade_cost[stat.current_level]
@@ -34,4 +34,7 @@ func _on_Button_button_down():
 		_progress_bar.value = stat.current_level
 	else:
 		print("Not Enough gold")
+	if stat.current_level == stat.max_level:
+		print("You have maxed out")
+		_button.disabled = true
 	
