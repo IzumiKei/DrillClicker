@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/minable_ore.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/ore_gold.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ore_name = "Gold"
+ore_texture = ExtResource( 2 )
+mining_speed = 15
