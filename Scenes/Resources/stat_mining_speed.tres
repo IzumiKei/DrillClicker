@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/stat_class.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Text"
+max_level = 1
+current_level = 1
+upgrade_mod = [ -1, 0 ]
+upgrade_cost = [ -1, 0 ]

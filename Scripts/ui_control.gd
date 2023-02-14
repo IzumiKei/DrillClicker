@@ -13,7 +13,7 @@ func _input(_event):
 	
 	if Input.is_action_just_pressed("Mine"):
 		if _drill_button.visible == true:
-			Inventory.current_ore_block.add_mineral_to_inventory()
+			Inventory.current_ore_block.spawn_ore()
 
 func player_entered_ore(_body):
 	# Señal para mostrar el boton "Drill"

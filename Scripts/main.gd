@@ -38,7 +38,7 @@ func _on_Drill_Button_button_down():
 	if Inventory.current_ore_block.being_drilled == false:
 		if Inventory.drills_available > 0:
 			Inventory.current_ore_block.install_drill()
-			Inventory.update_item("Drill", "Remove")
+			Inventory.update_item("Drill", "Remove", 1)
 		else: 
 			print("No tienes ningún taladro")
 

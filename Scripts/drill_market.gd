@@ -11,7 +11,7 @@ func _ready():
 func _on_Button_button_down():
 	if Inventory.gold_amount >= drill_cost:
 		print(_label.text + " buyed")
-		Inventory.update_item("Drill", "Add")
+		Inventory.update_item("Drill", "Add", 1)
 		Inventory.gold_amount -= drill_cost
 		Inventory.emit_signal("inventory_updated")
 		drill_cost *= 2

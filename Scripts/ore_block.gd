@@ -84,4 +84,4 @@ func _on_MineTimer_timeout():
 			_item = "Gold"
 		"Iron":
 			_item = "Iron"
-	Inventory.update_item(_item, "Add")
+	Inventory.update_item(_item, "Add", 1)

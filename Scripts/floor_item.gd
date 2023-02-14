@@ -12,8 +12,12 @@ func _on_Pickable_body_entered(body):
 		var _item
 		match Ore.ore_name:
 			"Gold":
+				if Inventory.gold_amount == Inventory.player_stats["MaxOre"]:
+					return
 				_item = "Gold"
 			"Iron":
+				if Inventory.iron_amount == Inventory.player_stats["MaxOre"]:
+					return
 				_item = "Iron"
-		Inventory.update_item(_item, "Add")
+		Inventory.update_item(_item, "Add", 1)
 	queue_free()
