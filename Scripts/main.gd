@@ -31,6 +31,11 @@ func _physics_process(_delta):
 		_player.position.y = 1
 	if _player_pos.y <= 0:
 		_player.position.y = 319
+	
+	# inputs
+	#recarga la escena
+	if Input.is_action_pressed("reset_scene"):
+		get_tree().reload_current_scene()
 
 
 func _on_Drill_Button_button_down():
@@ -45,3 +50,4 @@ func _on_Drill_Button_button_down():
 
 func _on_Mine_Button_button_down():
 	Inventory.current_ore_block.mine_block()
+
