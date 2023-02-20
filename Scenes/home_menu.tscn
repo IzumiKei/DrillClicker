@@ -30,7 +30,11 @@ rect_min_size = Vector2( 64, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="TextureProgress" parent="DrillMarket" index="2"]
+visible = false
+
 [node name="Max Ore" parent="." instance=ExtResource( 3 )]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -51,3 +55,5 @@ margin_top = -8.0
 margin_right = 32.0
 margin_bottom = 13.0
 stat = ExtResource( 5 )
+
+[editable path="DrillMarket"]

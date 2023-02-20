@@ -11,3 +11,4 @@ max_level = 5
 current_level = 1
 upgrade_mod = [ -1, 5, 10, 15, 20, 30 ]
 upgrade_cost = [ -1, 5, 10, 15, 20 ]
+desc_text = "Description"

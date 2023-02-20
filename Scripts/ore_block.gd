@@ -66,9 +66,10 @@ func spawn_ore():
 	_spawned_ores += 1
 
 
-func _on_PlayerCheck_body_entered(_body):
-	Inventory.current_ore_block = self # Para instalar el taladro (main.gd)
-	_spawned_ores = 0
+func _on_PlayerCheck_body_entered(body):
+	if body.name == "Player":
+		Inventory.current_ore_block = self # Para instalar el taladro (main.gd)
+		_spawned_ores = 0
 
 
 func _on_Timer_timeout():

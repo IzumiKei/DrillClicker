@@ -66,4 +66,6 @@ func _on_PlayerDrill_body_exited(body):
 		body.is_minable = false
 		_target_block = null
 		print(body.is_minable)
-
+		$PlayerDrill.set_deferred("monitoring", false)
+		$PlayerDrill.set_deferred("monitoring", true)
+	

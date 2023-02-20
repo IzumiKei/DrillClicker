@@ -1,12 +1,151 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Resources/ore_iron.tres" type="Resource" id=1]
 [ext_resource path="res://Scenes/Resources/ore_gold.tres" type="Resource" id=2]
 [ext_resource path="res://Scenes/ore_block.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/base_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/stone_block.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/stone_false_block.tscn" type="PackedScene" id=6]
 
 [node name="Level 1" instance=ExtResource( 4 )]
+
+[node name="Background" parent="Background3" index="0"]
+z_index = -3
+
+[node name="Background2" parent="Background3" index="1"]
+z_index = -3
+
+[node name="Stone False Block" parent="FalseBlocks" index="0"]
+position = Vector2( 104, 208 )
+
+[node name="Stone False Block3" parent="FalseBlocks" index="2" instance=ExtResource( 6 )]
+position = Vector2( 136, 208 )
+
+[node name="Stone False Block4" parent="FalseBlocks" index="3" instance=ExtResource( 6 )]
+position = Vector2( 136, 192 )
+
+[node name="Stone False Block5" parent="FalseBlocks" index="4" instance=ExtResource( 6 )]
+position = Vector2( 120, 192 )
+
+[node name="Stone False Block6" parent="FalseBlocks" index="5" instance=ExtResource( 6 )]
+position = Vector2( 104, 192 )
+
+[node name="Stone False Block7" parent="FalseBlocks" index="6" instance=ExtResource( 6 )]
+position = Vector2( 136, 48 )
+
+[node name="Stone False Block8" parent="FalseBlocks" index="7" instance=ExtResource( 6 )]
+position = Vector2( 152, 48 )
+
+[node name="Stone False Block9" parent="FalseBlocks" index="8" instance=ExtResource( 6 )]
+position = Vector2( 168, 48 )
+
+[node name="Stone False Block13" parent="FalseBlocks" index="9" instance=ExtResource( 6 )]
+position = Vector2( 136, 64 )
+
+[node name="Stone False Block14" parent="FalseBlocks" index="10" instance=ExtResource( 6 )]
+position = Vector2( 152, 64 )
+
+[node name="Stone False Block15" parent="FalseBlocks" index="11" instance=ExtResource( 6 )]
+position = Vector2( 168, 64 )
+
+[node name="Stone False Block10" parent="FalseBlocks" index="12" instance=ExtResource( 6 )]
+position = Vector2( 168, 32 )
+
+[node name="Stone False Block11" parent="FalseBlocks" index="13" instance=ExtResource( 6 )]
+position = Vector2( 152, 32 )
+
+[node name="Stone False Block12" parent="FalseBlocks" index="14" instance=ExtResource( 6 )]
+position = Vector2( 136, 32 )
+
+[node name="Stone False Block36" parent="FalseBlocks" index="15" instance=ExtResource( 6 )]
+position = Vector2( 56, 16 )
+
+[node name="Stone False Block37" parent="FalseBlocks" index="16" instance=ExtResource( 6 )]
+position = Vector2( 56, 32 )
+
+[node name="Stone False Block38" parent="FalseBlocks" index="17" instance=ExtResource( 6 )]
+position = Vector2( 72, 32 )
+
+[node name="Stone False Block39" parent="FalseBlocks" index="18" instance=ExtResource( 6 )]
+position = Vector2( 88, 32 )
+
+[node name="Stone False Block40" parent="FalseBlocks" index="19" instance=ExtResource( 6 )]
+position = Vector2( 56, 48 )
+
+[node name="Stone False Block41" parent="FalseBlocks" index="20" instance=ExtResource( 6 )]
+position = Vector2( 72, 48 )
+
+[node name="Stone False Block42" parent="FalseBlocks" index="21" instance=ExtResource( 6 )]
+position = Vector2( 88, 48 )
+
+[node name="Stone False Block43" parent="FalseBlocks" index="22" instance=ExtResource( 6 )]
+position = Vector2( 88, 16 )
+
+[node name="Stone False Block44" parent="FalseBlocks" index="23" instance=ExtResource( 6 )]
+position = Vector2( 72, 16 )
+
+[node name="Stone False Block45" parent="FalseBlocks" index="24" instance=ExtResource( 6 )]
+position = Vector2( 56, 16 )
+
+[node name="Stone False Block26" parent="FalseBlocks" index="25" instance=ExtResource( 6 )]
+position = Vector2( 72, 80 )
+
+[node name="Stone False Block27" parent="FalseBlocks" index="26" instance=ExtResource( 6 )]
+position = Vector2( 72, 96 )
+
+[node name="Stone False Block28" parent="FalseBlocks" index="27" instance=ExtResource( 6 )]
+position = Vector2( 88, 96 )
+
+[node name="Stone False Block29" parent="FalseBlocks" index="28" instance=ExtResource( 6 )]
+position = Vector2( 104, 96 )
+
+[node name="Stone False Block30" parent="FalseBlocks" index="29" instance=ExtResource( 6 )]
+position = Vector2( 72, 112 )
+
+[node name="Stone False Block31" parent="FalseBlocks" index="30" instance=ExtResource( 6 )]
+position = Vector2( 88, 112 )
+
+[node name="Stone False Block32" parent="FalseBlocks" index="31" instance=ExtResource( 6 )]
+position = Vector2( 104, 112 )
+
+[node name="Stone False Block33" parent="FalseBlocks" index="32" instance=ExtResource( 6 )]
+position = Vector2( 104, 80 )
+
+[node name="Stone False Block34" parent="FalseBlocks" index="33" instance=ExtResource( 6 )]
+position = Vector2( 88, 80 )
+
+[node name="Stone False Block35" parent="FalseBlocks" index="34" instance=ExtResource( 6 )]
+position = Vector2( 72, 80 )
+
+[node name="Stone False Block16" parent="FalseBlocks" index="35" instance=ExtResource( 6 )]
+position = Vector2( 8, 160 )
+
+[node name="Stone False Block17" parent="FalseBlocks" index="36" instance=ExtResource( 6 )]
+position = Vector2( 8, 176 )
+
+[node name="Stone False Block18" parent="FalseBlocks" index="37" instance=ExtResource( 6 )]
+position = Vector2( 24, 176 )
+
+[node name="Stone False Block19" parent="FalseBlocks" index="38" instance=ExtResource( 6 )]
+position = Vector2( 40, 176 )
+
+[node name="Stone False Block20" parent="FalseBlocks" index="39" instance=ExtResource( 6 )]
+position = Vector2( 8, 192 )
+
+[node name="Stone False Block21" parent="FalseBlocks" index="40" instance=ExtResource( 6 )]
+position = Vector2( 24, 192 )
+
+[node name="Stone False Block22" parent="FalseBlocks" index="41" instance=ExtResource( 6 )]
+position = Vector2( 40, 192 )
+
+[node name="Stone False Block23" parent="FalseBlocks" index="42" instance=ExtResource( 6 )]
+position = Vector2( 40, 160 )
+
+[node name="Stone False Block24" parent="FalseBlocks" index="43" instance=ExtResource( 6 )]
+position = Vector2( 24, 160 )
+
+[node name="Stone False Block25" parent="FalseBlocks" index="44" instance=ExtResource( 6 )]
+position = Vector2( 8, 160 )
 
 [node name="StoneBlock7" parent="Stones" index="5"]
 position = Vector2( 88, 192 )

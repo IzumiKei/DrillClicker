@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/ore_display.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/home_background.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/description_displayer.gd" type="Script" id=3]
+
+[node name="DescriptionDisplayer" type="NinePatchRect"]
+margin_right = 39.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 128, 128 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0
+margin_top = -42.0
+margin_right = 64.0
+margin_bottom = 41.0
+text = "Effects:
+	Nantoka"
+
+[node name="ExitButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -22.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = 22.0
+text = "X"
+
+[node name="UpgradeButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -33.0
+margin_top = -22.0
+margin_right = 32.0
+margin_bottom = -2.0
+text = "Upgrade"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="OreDisplay" parent="Control" instance=ExtResource( 1 )]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 10.0
+margin_bottom = -21.0
+
+[node name="OreDisplay2" parent="Control" instance=ExtResource( 1 )]
+margin_left = 53.0
+margin_top = 3.0
+margin_right = 61.0
+margin_bottom = -21.0
+
+[connection signal="button_down" from="ExitButton" to="." method="_on_ExitButton_button_down"]

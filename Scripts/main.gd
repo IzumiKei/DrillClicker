@@ -29,12 +29,17 @@ func _physics_process(_delta):
 		_player.position.x = 179
 	if _player_pos.y >= 320:
 		_player.position.y = 1
-	if _player_pos.y <= 0:
+	if _player_pos.y <= -320:
 		_player.position.y = 319
 	
-	# inputs
-	#recarga la escena
+	# Controla la cámara
+	if _player.position.y < 160:
+		_level.get_node("Camera2D").position.y = _player.position.y
+	if _player.position.y > 160:
+		_level.get_node("Camera2D").position.y = 160
+	# Inputs
 	if Input.is_action_pressed("reset_scene"):
+		# Recarga la escena
 		get_tree().reload_current_scene()
 
 

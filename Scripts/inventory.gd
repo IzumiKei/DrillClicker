@@ -4,7 +4,7 @@ extends Node
 #
 
 signal inventory_updated
-var player_stats: Dictionary = {"MaxOre": 5, "DrillSpeed": 1, "MiningSpeed": 1}
+var player_stats: Dictionary = {"MaxOre": 1000, "DrillSpeed": 1, "MiningSpeed": 1}
 var iron_amount: int = 0
 var gold_amount: int = 0
 var drills_available: int = 1
