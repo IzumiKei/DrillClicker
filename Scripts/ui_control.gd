@@ -34,9 +34,7 @@ func player_exited_ore(body):
 func player_entered_home(_body):
 	# Debug: Abre el menu de mejora
 	_canvas.get_node("HomeMenu").visible = true
-	print("Drill Cost: " + str(_canvas.get_node("HomeMenu").get_node("DrillMarket").drill_cost))
-	_canvas.get_node("HomeMenu").get_node("Max Ore").print_cost()
-	_canvas.get_node("HomeMenu").get_node("DrillSpeed").print_cost()
+	print("Drill Cost: " + str(_canvas.get_node("HomeMenu").get_node("DrillMarket").item_cost))
 
 
 func player_exited_home(_body):
