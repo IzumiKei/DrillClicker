@@ -1,19 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/ore_display.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Sprites/default_menu_background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/upgrade_button_up.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/description_displayer.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/gui_sector_description.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Font/IndieFlower.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Sprites/upgrade_button_down.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/buy_button_up.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/buy_button_down.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
+extra_spacing_bottom = -10
 font_data = ExtResource( 5 )
 
 [node name="DescriptionDisplayer" type="NinePatchRect"]
 margin_right = 128.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 128, 96 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -21,49 +26,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -63.0
-margin_top = -26.0
-margin_right = 64.0
+margin_left = -56.0
+margin_top = -38.0
+margin_right = 38.0
 margin_bottom = 25.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Effects:
 	Nantoka"
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = -42.0
+margin_right = 56.0
+margin_bottom = 37.0
+
+[node name="OreDisplay" parent="Control" instance=ExtResource( 1 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_top = -16.0
+margin_right = 48.0
+margin_bottom = 0.0
+
+[node name="OreDisplay2" parent="Control" instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_top = 1.0
+margin_left = -48.0
+margin_top = -16.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="ExitButton" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -22.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = 22.0
-text = "X"
+margin_left = -21.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 21.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
 
-[node name="UpgradeButton" type="Button" parent="."]
+[node name="UpgradeButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -33.0
-margin_top = -22.0
-margin_right = 32.0
-margin_bottom = -2.0
-text = "Upgrade"
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="OreDisplay" parent="Control" instance=ExtResource( 1 )]
-margin_left = 2.0
-margin_top = 3.0
-margin_right = 10.0
-margin_bottom = -21.0
-
-[node name="OreDisplay2" parent="Control" instance=ExtResource( 1 )]
-margin_left = 53.0
-margin_top = 3.0
-margin_right = 61.0
-margin_bottom = -21.0
+margin_left = -8.0
+margin_top = -27.0
+margin_right = 8.0
+margin_bottom = -11.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 6 )
+expand = true
 
 [connection signal="button_down" from="ExitButton" to="." method="_on_ExitButton_button_down"]
 [connection signal="button_down" from="UpgradeButton" to="." method="_on_UpgradeButton_button_down"]
