@@ -33,6 +33,7 @@ margin_right = 176.0
 margin_bottom = 14.0
 theme = SubResource( 1 )
 text = "Drill Clicker"
+align = 1
 
 [node name="play" type="Button" parent="VBoxContainer"]
 margin_top = 18.0

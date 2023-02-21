@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Sprites/resource.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Resources/stat_max_ore.tres" type="Resource" id=2]
-[ext_resource path="res://Scenes/upgrade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/stat_upgrade.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sprites/ore_iron.png" type="Texture" id=4]
 
 [node name="Max Ore" instance=ExtResource( 3 )]

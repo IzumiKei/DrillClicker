@@ -15,26 +15,26 @@ func _input(_event):
 		if _drill_button.visible == true:
 			Inventory.current_ore_block.spawn_ore()
 
-func player_entered_ore(_body):
+func player_entered_ore(body):
 	# Señal para mostrar el boton "Drill"
-	_drill_button.visible = true
-	_mine_button.visible = true
-	print("Player entered")
+	if body.name == "Player":
+		_drill_button.visible = true
+		_mine_button.visible = true
+		print("Player entered")
 
 
-func player_exited_ore(_body):
+func player_exited_ore(body):
 	# Señal para ocultar el boton "Drill"
-	_drill_button.visible = false
-	_mine_button.visible = false
-	print("Player exited")
+	if body.name == "Player":
+		_drill_button.visible = false
+		_mine_button.visible = false
+		print("Player exited")
 
 
 func player_entered_home(_body):
 	# Debug: Abre el menu de mejora
 	_canvas.get_node("HomeMenu").visible = true
-	print("Drill Cost: " + str(_canvas.get_node("HomeMenu").get_node("DrillMarket").drill_cost))
-	_canvas.get_node("HomeMenu").get_node("Max Ore").print_cost()
-	_canvas.get_node("HomeMenu").get_node("DrillSpeed").print_cost()
+	print("Drill Cost: " + str(_canvas.get_node("HomeMenu").get_node("DrillMarket").item_cost))
 
 
 func player_exited_home(_body):
