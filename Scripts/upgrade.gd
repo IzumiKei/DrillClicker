@@ -16,29 +16,20 @@ func _ready():
 	_progress_bar.value = stat.current_level
 
 
+func _process(delta):
+	_progress_bar.value = stat.current_level
+
+
 func print_cost():
 	# Coloca el nuevo coste en pantalla
 	if stat.current_level == stat.max_level:
 		print(stat.name + " is maxed")
 	else:
-		print(stat.name + " costs: " + str(stat.upgrade_cost[stat.current_level]))
+		print(stat.name + " costs: " + str(stat.get_upgrade_cost()))
 
 
 func _on_Button_button_down():
-	if stat.current_level == stat.max_level:
-		print("You have maxed out")
-		_button.disabled = true
-	# Ejecuta la mejora de nivel si se dispone de los materiales
-	if Inventory.gold_amount >= stat.upgrade_cost[stat.current_level]:
-		print(stat.name + " upgraded")
-		Inventory.gold_amount -= stat.upgrade_cost[stat.current_level]
-		Inventory.emit_signal("inventory_updated")
-		stat.level_up()
-		_progress_bar.value = stat.current_level
-	else:
-		print("Not Enough gold")
-		
-	if stat.current_level == stat.max_level:
-		print("You have maxed out")
-		_button.disabled = true
+	get_parent().get_node("DescriptionDisplayer").stat = stat
+	get_parent().get_node("DescriptionDisplayer").update_description()
+	get_parent().get_node("DescriptionDisplayer").set_visible(true)
 	

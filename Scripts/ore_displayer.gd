@@ -17,13 +17,13 @@ func _ready():
 
 func update_display():
 	# Actualiza lo que se muestra
-	_iron_display.get_node("RichTextLabel").text = String(Inventory.iron_amount)
-	if Inventory.iron_amount == Inventory.player_stats["MaxOre"]:
+	_iron_display.get_node("RichTextLabel").text = String(Inventory.inv_slots["Iron"])
+	if Inventory.inv_slots["Iron"] == Inventory.player_stats["MaxOre"]:
 		 _iron_display.get_node("RichTextLabel").set_modulate(full_inventory_text_color)
 	else: 
 		_iron_display.get_node("RichTextLabel").set_modulate(inventory_text_color)
-	_gold_display.get_node("RichTextLabel").text = String(Inventory.gold_amount)
-	if Inventory.gold_amount == Inventory.player_stats["MaxOre"]:
+	_gold_display.get_node("RichTextLabel").text = String(Inventory.inv_slots["Gold"])
+	if Inventory.inv_slots["Gold"] == Inventory.player_stats["MaxOre"]:
 		 _gold_display.get_node("RichTextLabel").set_modulate(full_inventory_text_color)
 	else: 
 		_gold_display.get_node("RichTextLabel").set_modulate(inventory_text_color)

@@ -8,16 +8,9 @@ func _ready():
 
 
 func _on_Pickable_body_entered(body):
-	if body == Inventory.player_node:
-		var _item
-		match Ore.ore_name:
-			"Gold":
-				if Inventory.gold_amount == Inventory.player_stats["MaxOre"]:
-					return
-				_item = "Gold"
-			"Iron":
-				if Inventory.iron_amount == Inventory.player_stats["MaxOre"]:
-					return
-				_item = "Iron"
+	if body.name == "Player":
+		var _item = Ore.ore_name
+		if Inventory.inv_slots[_item] == Inventory.player_stats["MaxOre"]:
+			return
 		Inventory.update_item(_item, "Add", 1)
 	queue_free()
