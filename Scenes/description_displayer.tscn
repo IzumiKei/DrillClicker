@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/ore_display.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Sprites/home_background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/default_menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/description_displayer.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Resources/stat_max_ore.tres" type="Resource" id=4]
 [ext_resource path="res://Assets/Font/IndieFlower.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -11,12 +10,11 @@ size = 10
 font_data = ExtResource( 5 )
 
 [node name="DescriptionDisplayer" type="NinePatchRect"]
-margin_right = 39.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 128, 128 )
+margin_right = 128.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 96 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-stat = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -24,9 +22,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -63.0
-margin_top = -42.0
+margin_top = -26.0
 margin_right = 64.0
-margin_bottom = 41.0
+margin_bottom = 25.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Effects:
 	Nantoka"

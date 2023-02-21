@@ -8,9 +8,6 @@ onready var display_1 = $Control/OreDisplay
 onready var display_2 = $Control/OreDisplay2
 onready var _button = $UpgradeButton
 
-func _ready():
-	update_description()
-
 
 func update_description():
 	stat.update_desc_text()
