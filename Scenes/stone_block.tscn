@@ -13,7 +13,6 @@ extents = Vector2( 8, 8 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." groups=["MinableBlock"]]
-z_index = 1
 z_as_relative = false
 texture = ExtResource( 1 )
 

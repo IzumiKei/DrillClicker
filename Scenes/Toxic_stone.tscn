@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Toxic_stone.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/piedra_toxica.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[node name="Toxic_stone" type="StaticBody2D" groups=["MinableBlock"]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." groups=["MinableBlock"]]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["MinableBlock"]]
+z_index = -1
+shape = SubResource( 1 )
+
+[node name="minable" type="Area2D" parent="." groups=["MinableBlock"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minable" groups=["MinableBlock"]]
+z_index = -1
+shape = SubResource( 2 )

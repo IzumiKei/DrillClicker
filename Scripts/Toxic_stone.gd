@@ -8,16 +8,7 @@ var is_minable = false
 
 func be_mined():
 	# Mina este bloque
-	durability
-
-
-func drop_ore():
-	var _item
-	match ore_to_drop.ore_name:
-		"Gold":
-			_item = "Gold"
-		"Iron":
-			_item = "Iron"
-	Inventory.update_item(_item, "Add", 1)
-
-
+	durability = durability - 20
+	print("Durabilidad: " + String(durability))
+	if durability <= 0:
+		queue_free()
