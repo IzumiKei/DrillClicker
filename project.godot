@@ -34,6 +34,7 @@ config/icon="res://icon.png"
 
 Inventory="*res://Scripts/inventory.gd"
 Pollution="*res://Scripts/pollution.gd"
+Player="*res://Scripts/player.gd"
 
 [display]
 
