@@ -2,7 +2,7 @@ extends KinematicBody2D
 #
 # Main player script
 #
-
+export(int) var contaminacion = 10
 const FRICTION: int = 200
 const MAX_SPEED: int = 60
 export(int) var acceleration = 40
@@ -10,6 +10,8 @@ var mov_direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2
 var _target_block: StaticBody2D = null
 onready var _sprite = $Sprite
+var mask = Inventory.venom_resistence - contaminacion
+var healt = 100
 
 func _input(_event):
 	if Input.is_action_pressed("ui_select"):
@@ -69,3 +71,11 @@ func _on_PlayerDrill_body_exited(body):
 		$PlayerDrill.set_deferred("monitoring", false)
 		$PlayerDrill.set_deferred("monitoring", true)
 	
+
+func _healt_reduction():
+	healt -= mask
+	print("healt: " + String(healt))
+	if healt <= 0:
+		queue_free()
+
+
