@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Sprites/home_background.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/item_market.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/home_menu_market.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/description_displayer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sprites/drill.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/home_menu_upgrades.tscn" type="PackedScene" id=8]
@@ -39,6 +40,16 @@ margin_bottom = 73.0
 item_name = "Drill"
 item_cost = 1
 item_icon = ExtResource( 7 )
+
+[node name="HM_Market" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -96.0
+margin_right = 64.0
+margin_bottom = 0.0
 
 [node name="DescriptionDisplayer" parent="." instance=ExtResource( 6 )]
 visible = false

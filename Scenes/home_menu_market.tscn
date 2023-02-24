@@ -1,19 +1,82 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Sprites/gui_sector_description.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/buy_item_slot.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/buy_button_down.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/buy_button_up.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/button_arrow_down.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/button_arrow.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/resource.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/home_menu_market.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Resources/item_drill.tres" type="Resource" id=9]
 
 [node name="HM_Market" type="NinePatchRect"]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 128, 96 )
 texture = ExtResource( 1 )
+script = ExtResource( 8 )
+item_list = [ ExtResource( 9 ) ]
 
 [node name="item_slot" type="NinePatchRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+margin_left = -32.0
+margin_top = -29.0
+margin_right = 32.0
+margin_bottom = 11.0
+rect_min_size = Vector2( 64, 40 )
+texture = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="item_slot"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = -11.0
+margin_right = 11.0
+margin_bottom = 11.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="BuyButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -30.0
+margin_right = 8.0
+margin_bottom = -14.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+
+[node name="LeftArrowButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -27.0
+margin_top = -12.0
+margin_right = -11.0
+margin_bottom = 12.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+
+[node name="RightArrowButton" type="TextureButton" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = 12.0
+margin_right = 43.0
+margin_bottom = 36.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+
+[connection signal="button_down" from="BuyButton" to="." method="_on_BuyButton_button_down"]
+[connection signal="button_down" from="LeftArrowButton" to="." method="_on_LeftArrowButton_button_down"]
+[connection signal="button_down" from="RightArrowButton" to="." method="_on_RightArrowButton_button_down"]
