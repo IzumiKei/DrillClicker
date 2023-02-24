@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Scripts/stat_class.gd"
 }, {
 "base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Scripts/class_item.gd"
+}, {
+"base": "Resource",
 "class": "MinableOre",
 "language": "GDScript",
 "path": "res://Scripts/minable_ore.gd"
 } ]
 _global_script_class_icons={
 "BasicStat": "",
+"Item": "",
 "MinableOre": ""
 }
 
