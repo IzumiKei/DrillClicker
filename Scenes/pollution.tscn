@@ -1,19 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="GDScript" id=2]
-script/source = "extends Area2D
-
-export(int) var contaminacion = 10
-
-"
+[ext_resource path="res://Scripts/pollution.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 88, 159.5 )
+extents = Vector2( 87.5, 159.5 )
 
 [node name="pollution" type="Area2D"]
-position = Vector2( 86, 124 )
-script = SubResource( 2 )
+position = Vector2( 88, 152 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3, 37.5 )
+position = Vector2( -0.5, 8.5 )
 shape = SubResource( 1 )

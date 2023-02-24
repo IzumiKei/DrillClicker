@@ -11,7 +11,6 @@ var gold_amount: int = 0
 var drills_available: int = 1
 var current_ore_block: StaticBody2D # Para instalar taladros (main.gd)
 var venom_resistence = 20
-var healt = 100
 
 func update_item(item, action, amount):
 	# Agrega un item al inventario

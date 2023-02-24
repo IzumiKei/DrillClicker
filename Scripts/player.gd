@@ -10,8 +10,8 @@ var mov_direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2
 var _target_block: StaticBody2D = null
 onready var _sprite = $Sprite
-var mask = Inventory.venom_resistence - contaminacion
-var healt = 100
+var PoisonResistence = Inventory.venom_resistence - contaminacion
+var mask = 100
 
 func _input(_event):
 	if Input.is_action_pressed("ui_select"):
@@ -73,9 +73,9 @@ func _on_PlayerDrill_body_exited(body):
 	
 
 func _healt_reduction():
-	healt -= mask
-	print("healt: " + String(healt))
-	if healt <= 0:
-		queue_free()
+	mask -= PoisonResistence
+	print("mask: " + String(mask))
+	if mask <= 0:
+		get_tree().reload_current_scene()
 
 

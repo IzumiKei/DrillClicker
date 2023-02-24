@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Levels/level_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/home_menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/ui_control.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Toxic_stone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/pollution.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/toxic_gas.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/drill_button.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/ore_displayer.tscn" type="PackedScene" id=11]
@@ -99,11 +99,11 @@ margin_top = -15.0
 margin_right = 50.0
 rect_min_size = Vector2( 50, 15 )
 
-[node name="Toxic_stone" parent="." instance=ExtResource( 6 )]
-position = Vector2( 36, 252 )
+[node name="pollution" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, 150 )
 
 [node name="toxic_gas" parent="." instance=ExtResource( 7 )]
-position = Vector2( 132, 268 )
+position = Vector2( 157, 256 )
 
 [connection signal="button_down" from="UI_Control/CanvasLayer/Mine_Button" to="Main" method="_on_Mine_Button_button_down"]
 [connection signal="button_down" from="UI_Control/CanvasLayer/Drill_Button" to="Main" method="_on_Drill_Button_button_down"]
