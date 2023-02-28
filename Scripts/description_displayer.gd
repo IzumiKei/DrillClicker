@@ -10,8 +10,9 @@ onready var _button = $UpgradeButton
 
 
 func update_description():
+	# Actualiza la descripción
 	stat.update_desc_text()
-	text_label.text = "Effect: \n" + stat.desc_text
+	text_label.text = stat.desc_text
 	match stat.first_resource:
 		"Gold":
 			display_1.get_node("TextureRect").texture = gold_icon
