@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Resources/ore_iron.tres" type="Resource" id=1]
 [ext_resource path="res://Scenes/Resources/ore_gold.tres" type="Resource" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Levels/base_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/stone_block.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/stone_false_block.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/trap_block_control.gd" type="Script" id=8]
 
 [node name="Level 1" instance=ExtResource( 4 )]
 
@@ -476,3 +477,9 @@ Ore = ExtResource( 1 )
 [node name="OreBlock5" parent="Ores" index="4" instance=ExtResource( 3 )]
 position = Vector2( 72, 32 )
 Ore = ExtResource( 2 )
+
+[node name="TrapBlocks" parent="." index="9"]
+script = ExtResource( 8 )
+
+[node name="Toxic_stone" parent="TrapBlocks" index="0"]
+position = Vector2( 50, 265 )

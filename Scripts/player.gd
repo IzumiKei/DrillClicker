@@ -10,7 +10,7 @@ var mov_direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2
 var _target_block: StaticBody2D = null
 onready var _sprite = $Sprite
-var PoisonResistence = Inventory.venom_resistence - contaminacion
+var venomdamage = Inventory.venom_resistence - contaminacion
 var mask = 100
 
 func _input(_event):
@@ -73,9 +73,13 @@ func _on_PlayerDrill_body_exited(body):
 	
 
 func _healt_reduction():
-	mask -= PoisonResistence
+	venomdamage = Inventory.venom_resistence - contaminacion
+	mask -= venomdamage
 	print("mask: " + String(mask))
 	if mask <= 0:
-		print("Game Over")
+		get_tree().reload_current_scene()
 
 
+
+func _on_Timer_timeout():
+	pass # Replace with function body.

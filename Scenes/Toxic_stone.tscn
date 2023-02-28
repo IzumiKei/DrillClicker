@@ -24,3 +24,6 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minable" groups=["MinableBlock"]]
 z_index = -1
 shape = SubResource( 2 )
+
+[connection signal="tree_exited" from="." to="." method="_on_Toxic_stone_tree_exited"]
+[connection signal="tree_exiting" from="." to="." method="_on_Toxic_stone_tree_exiting"]
