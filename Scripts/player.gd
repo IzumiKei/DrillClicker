@@ -76,6 +76,6 @@ func _healt_reduction():
 	mask -= PoisonResistence
 	print("mask: " + String(mask))
 	if mask <= 0:
-		get_tree().reload_current_scene()
+		print("Game Over")
 
 
